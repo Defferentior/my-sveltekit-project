@@ -39,14 +39,15 @@
         }
     }
 </script>
-
-<button data-testid={testid} class={cssClass()} on:click={() => handleClick(item)} on:keydown={(event) => handleKeyDown(event, item)}>
+<li data-testid={testid} >
     <div class="selected-indicator">*</div>
-    <div class="name"> {item.name} [{item.selected}]</div>
-</button>
+    <button data-testid={testid} class={cssClass()} on:click={() => handleClick(item)} on:keydown={(event) => handleKeyDown(event, item)}>
+        <div class="name"> {item.name} [{item.selected}]</div>
+    </button>
+</li>
 
 <style>
-    button.item {
+    li.item {
         padding: 5px;
         outline: solid 1px #eee;
         display: flex;
@@ -56,19 +57,19 @@
         transition: background-color 0.3s ease;
 
     }
-    button.item.name{
+    li.item.name{
         margin-left: 6px;
     }
-    button.item.selected-indicator {
+    li.item.selected-indicator {
         font-size: 2em;
         line-height: 0.5em;
         margin: 10px 8px 0 8px;
         color: lightgray;
     }
-    button.item.selected.selected-indicator {
+    li.item.selected.selected-indicator {
         color: skyblue;
     }
-    button.item:hover {
+    li.item:hover {
         background-color: #eee;
     }
 </style>

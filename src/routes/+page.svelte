@@ -24,3 +24,9 @@ const items: ItemInterface[] = [{ // here change any[] to ItemInterface[]
     <ItemsListComponent items={items}/> 
   </div>
 </main>
+
+<style> 
+  .home {
+    padding: 20px; 
+  }
+</style>
