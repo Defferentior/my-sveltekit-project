@@ -4,7 +4,7 @@
     //import a reference to our ItemInterface:
     import type { ItemInterface } from '$lib/models/items/Item.interface';
 
-    // expose a property called testid. This will be useful for unite tests (or automation testing)
+    // expose a property called testid. This will be useful for unit tests (or automation testing)
     export let testid: string = 'not-set';
 
     // expose a property called items with a default value of a blank array
@@ -39,14 +39,16 @@
         }
     }
 </script>
-<li data-testid={testid} >
+
+<li data-testid={testid} class={cssClass()} >
     <div class="selected-indicator">*</div>
-    <button data-testid={testid} class={cssClass()} on:click={() => handleClick(item)} on:keydown={(event) => handleKeyDown(event, item)}>
+    <button data-testid={testid} on:click={() => handleClick(item)} on:keydown={(event) => handleKeyDown(event, item)}>
         <div class="name"> {item.name} [{item.selected}]</div>
     </button>
 </li>
 
 <style>
+
     li.item {
         padding: 5px;
         outline: solid 1px #eee;
@@ -57,19 +59,21 @@
         transition: background-color 0.3s ease;
 
     }
-    li.item.name{
+    /*li.item .name{
         margin-left: 6px;
-    }
-    li.item.selected-indicator {
+        margin-right: 6px;
+    }*/
+    li.item .selected-indicator {
         font-size: 2em;
         line-height: 0.5em;
         margin: 10px 8px 0 8px;
         color: lightgray;
     }
-    li.item.selected.selected-indicator {
+    li.item.selected .selected-indicator {
         color: skyblue;
     }
     li.item:hover {
         background-color: #eee;
     }
+
 </style>
