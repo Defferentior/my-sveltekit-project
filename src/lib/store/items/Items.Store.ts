@@ -54,7 +54,7 @@ export function useItemsStore(): ItemsStoreInterface {
                     return state
                 })
                 console.log('itemsStore: loadItems: state updated')
-            }, 1000)
+            }, 100)
         },
 
         // action that we invoke to toggle an item.selected property

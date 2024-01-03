@@ -41,7 +41,7 @@
     }
 </script>
 
-<li data-testid={testid} class={cssClass()} >
+<li class={cssClass()} data-testid={testid + 'li'} >
     <div class="selected-indicator">*</div>
     <button data-testid={testid} on:click={() => handleClick(item)} on:keydown={(event) => handleKeyDown(event, item)}>
         <div class="name"> {item.name} [{item.selected}]</div>

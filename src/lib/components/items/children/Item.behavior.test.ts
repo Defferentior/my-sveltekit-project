@@ -25,7 +25,7 @@ describe ('Item.component: behavior',() => {
         })
 
         // get element reference by testid
-        const liElement = screen.getByTestId(testid)
+        const buttonElement = screen.getByTestId(testid)
      
         // create a spy function with vitest.fn()
         const mockOnItemSelect = vitest.fn()
@@ -35,7 +35,7 @@ describe ('Item.component: behavior',() => {
         // click the element
         // Note: In svelte testing we have to use await when firing events
         // because we must wait for the next `tick` to allow for svelte to flush all pending state changes
-        await fireEvent.click(liElement)
+        await fireEvent.click(buttonElement)
         
 
         expect(mockOnItemSelect).toHaveBeenCalledTimes(1)

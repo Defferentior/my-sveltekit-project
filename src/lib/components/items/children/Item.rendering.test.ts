@@ -26,7 +26,7 @@ describe ('Item.component: rendering',() => {
         })
 
         // get element reference by testid
-        const liElement = screen.getByTestId(testid)
+        const liElement = screen.getByTestId(testid+'li')
 
         //test
         expect(liElement).not.toBeNull()
@@ -49,7 +49,7 @@ describe ('Item.component: rendering',() => {
             item
         })
 
-        const liElement = screen.getByTestId(testid)
+        const liElement = screen.getByTestId(testid+'li')
 
         expect(liElement).not.toBeNull()
         expect(liElement.className).toContain('selected')
