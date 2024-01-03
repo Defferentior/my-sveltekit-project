@@ -34,7 +34,7 @@
     }
 
     function handleKeyDown(event: KeyboardEvent, item: ItemInterface) {
-        if (event.key === 'Enter') {
+        if (event.key === 'Return') {
             handleClick(item);
         }
     }
