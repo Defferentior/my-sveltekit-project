@@ -32,9 +32,9 @@ export function useItemsStore(): ItemsStoreInterface {
             })
 
            // mock some data:
-            let mockData: ItemInterface[] = [{ 
+            const mockData: ItemInterface[] = [{ 
                 id: 1,
-                name: 'Item 1',
+                name: 'Item 5',
                 selected: false 
             }, {
                 id: 2,
@@ -69,6 +69,7 @@ export function useItemsStore(): ItemsStoreInterface {
                     return state
                 }
 
+                console.log('ItemsStore: action toggleItemSelected: itemIndex', itemIndex)
                 // toggle selected
                 state.items[itemIndex].selected = !state.items[itemIndex].selected
                 // keep current loading value

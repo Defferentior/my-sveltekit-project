@@ -27,6 +27,7 @@
     }
 
     function handleClick(item: ItemInterface) {
+        console.log('ItemComponent: handleClick: item: ', item)
         // send an event to the parent component
         dispatch('selectItem', {
             item
