@@ -11,7 +11,7 @@
     //
     export let selectItem: (event: CustomEvent<{item: ItemInterface}>) => void
 
-    // expose a property called items with a default value of a blank array
+    // expose a property called items with a default value of a blank array test
     export let items: ItemInterface[] = []; //here replace any[] with ItemInterface[]
 
 </script>
