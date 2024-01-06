@@ -1,6 +1,7 @@
 /* eslint-disable no-self-assign */
 //import a reference to Svelte's writeable from 'svelte/store'
 import * as SvelteStore from 'svelte/store';
+import { apiClient } from '$lib/api-client';
 
 // import a reference to our item store and action interface
 import type {
@@ -31,30 +32,18 @@ export function useItemsStore(): ItemsStoreInterface {
                 return state
             })
 
-           // mock some data:
-            const mockData: ItemInterface[] = [{ 
-                id: 1,
-                name: 'Item 5',
-                selected: false 
-            }, {
-                id: 2,
-                name: 'Item 2', 
-                selected: false
-            }, {
-                id: 3,
-                name: 'Item 3',
-                selected: false 
-            }]
+           // invoke our API client fetchItems to load the data from an api end-point
+           const data = await apiClient.items.fetchItems()
 
-            setTimeout(() => {
-                // set items data and loading to false
-                writableItemsStore.update((state) => { 
-                    state.items = mockData
-                    state.loading = false
-                    return state
-                })
-                console.log('itemsStore: loadItems: state updated')
-            }, 100)
+           // set items data and loading to false
+              writableItemsStore.update((state) => {
+                state.loading = false,
+                state.items = data
+                return state
+              })
+            
+
+           
         },
 
         // action that we invoke to toggle an item.selected property

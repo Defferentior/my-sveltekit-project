@@ -17,7 +17,7 @@
 </script>
 
 <div>
-    <h3>My Items - loading: {loading}</h3> 
+    <h3>My Items {#if loading} - loading{/if}</h3> 
     {#if loading} 
         <Loader /> 
     {/if}
