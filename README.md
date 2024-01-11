@@ -1,3 +1,15 @@
+# Book Description
+
+This is a repo for the project guided by the book [`Large Scale Apps with Svelte and TypeScript`](https://www.amazon.com/dp/B0CJDP4FS2) by [`Damiano Fusco`](https://www.damianofusco.com/).
+
+However, rather than using the book's defined creation method wholesale, I've instead created a sveltekit app, and reworked the application so that it works with that different architecture. Rather than copy pasting code, I'm also using this book as a chance to learn both how to use and how not to use Github Copilot by debugging, reworking, and aligning with the book the premade code it creates.
+
+# Commit-Times
+
+All chapter completions that I do will be commited, as well as sensible breakpoints within chapters
+
+--- 
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
